@@ -76,8 +76,8 @@ void
 MainWindow::help ()
 {
     QMessageBox::about(this, tr("Point Cloud Editor"),
-                       tr("view mode\n"
-                          "  mouse drag:\t Rotation About Coordinate Origin\n"
+                       tr("View mode\n"
+                          "  Mouse drag:\t Rotation About Coordinate Origin\n"
                           " Alt+mouse drag:\tPan Z\n"
                            "Ctrl+mouse drag:\tslowly zoom\n"
                            " Shift+mouse drag:\tZoom\n"
@@ -88,7 +88,7 @@ MainWindow::help ()
                            "Ctrl+mouse drag:\tslowly zoom\n"
                            "\n"
                            "Mouse click mode\n"
-                           " Left button:\t\tselect point\n"
+                           " Left button:\t\t Select point\n"
                            " Ctrl+left button:\tCancel selection\n"
                            " Shift+left click:\tadditional selection\n"
                            "\n"
@@ -290,7 +290,7 @@ MainWindow::createActions ()
     extracting=new QAction(QIcon(icon_path+"extracting.png"),QString("extract"),action_group_);
     connect(extracting,SIGNAL(triggered()),cloud_editor_widget_,SLOT(extracting()));
 
-    extracting_save=new QAction(QIcon(icon_path+"save_1.png"),QString("save extracted file"),action_group_);
+    extracting_save=new QAction(QIcon(icon_path+"save_1.png"),QString("Save extracted file"),action_group_);
     connect(extracting_save,SIGNAL(triggered()),cloud_editor_widget_,SLOT(saveExtractingFile()));
 
     SACMODEL_CIRCLE2D_action=new QAction(QString("2D circle"),this);
@@ -299,10 +299,10 @@ MainWindow::createActions ()
     SACMODEL_CYLINDER_action=new QAction(QString("Cylinder"),this);
     connect(SACMODEL_CYLINDER_action,SIGNAL(triggered()),cloud_editor_widget_,SLOT(recognize_SACMODEL_CYLINDER()));
 
-    SACMODEL_PLANE_action=new QAction(QString("noodle"),this);
+    SACMODEL_PLANE_action=new QAction(QString("Noodle"),this);
     connect(SACMODEL_PLANE_action,SIGNAL(triggered()),cloud_editor_widget_,SLOT(recognize_SACMODEL_PLANE()));
 
-    SACMODEL_SPHERE_action=new QAction(QString("ball"),this);
+    SACMODEL_SPHERE_action=new QAction(QString("Ball"),this);
     connect(SACMODEL_SPHERE_action,SIGNAL(triggered()),cloud_editor_widget_,SLOT(recognize_SACMODEL_SPHERE()));
     qrcode_recognize=new QAction(QString("Identify QR code"),this);
     connect(qrcode_recognize,SIGNAL(triggered()),cloud_editor_widget_,SLOT(loadqrcode()));
@@ -313,7 +313,7 @@ MainWindow::createActions ()
 void
 MainWindow::createMenus ()
 {
-    file_menu_ = new QMenu(QString("&document"), this);
+    file_menu_ = new QMenu(QString("&Document"), this);
 
 
     QFont font =file_menu_->font();
@@ -326,7 +326,7 @@ MainWindow::createMenus ()
     file_menu_ -> addSeparator();
     file_menu_ -> addAction(exit_action_);
 
-    edit_menu_ = new QMenu(QString("&edit"), this);
+    edit_menu_ = new QMenu(QString("&Edit"), this);
     edit_menu_->setFont(font);
     //  edit_menu_ -> setAttribute(Qt::WA_DeleteOnClose);
     edit_menu_ -> addAction(undo_action_);
@@ -339,11 +339,11 @@ MainWindow::createMenus ()
     edit_menu_ -> addAction(transform_action_);
 
 
-    select_menu_ = new QMenu(QString("&choose"), this);
+    select_menu_ = new QMenu(QString("&Choose"), this);
     select_menu_->setFont(font);
     select_menu_ -> addAction(select_2D_action_);
 
-    display_menu_ = new QMenu(QString("&show"), this);
+    display_menu_ = new QMenu(QString("&Show"), this);
     display_menu_->setFont(font);
     //  display_menu_ -> setAttribute(Qt::WA_DeleteOnClose);
     display_menu_ -> addAction(toggle_blend_action_);
@@ -357,19 +357,19 @@ MainWindow::createMenus ()
     view_menu_ -> addAction(view_action_);
     view_menu_ -> addAction(show_stat_action_);
 
-    tool_menu_ = new QMenu(QString("&algorithm"), this);
+    tool_menu_ = new QMenu(QString("&Tools"), this);
     tool_menu_->setFont(font);
     //  tool_menu_ -> setAttribute(Qt::WA_DeleteOnClose);
     tool_menu_ -> addAction(denoise_action_);
     tool_menu_->addAction(crackdetect);
 
-    help_menu_ = new QMenu(QString("&help"), this);
+    help_menu_ = new QMenu(QString("&Help"), this);
     help_menu_->setFont(font);
     //  help_menu_ -> setAttribute(Qt::WA_DeleteOnClose);
     help_menu_ -> addAction(about_action_);
     help_menu_ -> addAction(help_action_);
 
-    recognition_menu=new QMenu(QString("&identify"),this);
+    recognition_menu=new QMenu(QString("&Recognition"),this);
     recognition_menu->setFont(font);
     recognition_menu->addAction(SACMODEL_CIRCLE2D_action);
     recognition_menu->addAction(SACMODEL_CYLINDER_action);
@@ -398,12 +398,12 @@ MainWindow::createToolBars ()
 {
     createSpinBoxes();
     createSliders();
-    view_tool_bar_ = addToolBar(tr("file"));
+    view_tool_bar_ = addToolBar(tr("File"));
     view_tool_bar_->setFixedHeight(100);
     view_tool_bar_->setIconSize(QSize(60,60));
     view_tool_bar_ -> addAction(open_action_);
     view_tool_bar_ -> addAction(save_action_);
-    view_tool_bar_ = addToolBar(tr("view"));
+    view_tool_bar_ = addToolBar(tr("View"));
     view_tool_bar_->setFixedHeight(100);
     view_tool_bar_->setIconSize(QSize(60,60));
     view_tool_bar_ -> addAction(view_action_);
@@ -415,7 +415,7 @@ MainWindow::createToolBars ()
     //view_tool_bar_ -> addAction(select_3D_action_);
     view_tool_bar_ -> addAction(invert_select_action_);
     
-    edit_tool_bar_ = addToolBar(tr("edit"));
+    edit_tool_bar_ = addToolBar(tr("Edit"));
     edit_tool_bar_->setFixedHeight(100);
     edit_tool_bar_->setIconSize(QSize(60,60));
     edit_tool_bar_ -> addAction(undo_action_);

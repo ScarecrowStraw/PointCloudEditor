@@ -124,18 +124,16 @@ DISTFILES += \
     resources/zoom_big.png \
     resources/move_1.png
 
-INCLUDEPATH+=/home/lacie/Github/pcl_point_cloud_editor/include
+INCLUDEPATH+=/home/lacie/Github/PointCloudEditor/include
 #Eigen
 INCLUDEPATH += /usr/include/eigen3
 
 #Vtk
 INCLUDEPATH += /usr/include/vtk-7.1
-
 LIBS += /usr/lib/x86_64-linux-gnu/libvtk*.so
 
 #Boost
 INCLUDEPATH += /usr/include/boost
-
 LIBS += /usr/lib/x86_64-linux-gnu/libboost_*.so
 
 #PCL Header
@@ -143,25 +141,18 @@ INCLUDEPATH += /usr/local/include/pcl-1.8
 
 #PCL Lib
 LIBS        += /usr/local/lib/libpcl_*.so
-
 INCLUDEPATH+=/home/lacie/Qt/5.15.2/gcc_64/include/QtOpenGL
 
 #opengl
-
 INCLUDEPATH+=/usr/include/GL
-
 LIBS+=/usr/lib/x86_64-linux-gnu/libGL*.so
 
 ##opencv
 INCLUDEPATH+=/usr/local/include/opencv4/
-
 LIBS+=/usr/local/lib/libopencv*.so
 
 #zbar
 INCLUDEPATH+=/usr/include/zbar
-
 LIBS+=/usr/lib/x86_64-linux-gnu/libzbar*
-
 LIBS+=/usr/lib/x86_64-linux-gnu/libdbus*
-
 LIBS+=/usr/lib/x86_64-linux-gnu/libsystemd*

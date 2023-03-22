@@ -54,7 +54,7 @@ private:
     void drawLines();
     void drawLine(QPoint point1,QPoint point2);
     void calculateArea();
-    void calculatePerimeter();/
+    void calculatePerimeter();
     CloudPtr cloud_ptr_;
     void highLight(int index);
     void update();

@@ -305,7 +305,7 @@ Cloud::draw (bool disable_highlight) const
             }
             glPopMatrix();
         }
-        glPopClientAttrib();number of points
+        glPopClientAttrib();
     }
     glPopAttrib();
 }
@@ -489,7 +489,7 @@ Cloud::updateCloudMembers ()
 void
 Cloud::enableTexture () const
 {
-    if (!use_color_ramp_)number of points
+    if (!use_color_ramp_)
         return;
     float ranges[3] ={max_xyz_[0] - min_xyz_[0],
                       max_xyz_[1] - min_xyz_[1],
