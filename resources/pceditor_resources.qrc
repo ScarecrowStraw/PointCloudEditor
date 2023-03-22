@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/">
+        <file>click.png</file>
+        <file>copy.png</file>
+        <file>cube.png</file>
+        <file>cut.png</file>
+        <file>delete.png</file>
+        <file>info.png</file>
+        <file>invert.png</file>
+        <file>move.png</file>
+        <file>open.png</file>
+        <file>paste.png</file>
+        <file>save.png</file>
+        <file>select.png</file>
+        <file>undo.png</file>
+        <file>view.png</file>
+        <file>pceditor.icns</file>
+        <file>zoom_big.png</file>
+        <file>move_1.png</file>
+        <file>ranging.png</file>
+        <file>giphy.gif</file>
+        <file>extracting.png</file>
+        <file>save_1.png</file>
+        <file>compare.png</file>
+    </qresource>
+</RCC>
